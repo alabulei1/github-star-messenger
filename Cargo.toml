@@ -1,0 +1,13 @@
+[package]
+name = "g2s-issue"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+path = "src/g2s.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+github-flows = "0.1.3"
+slack-flows = "0.2.5"
+tokio_wasi = { version = "1.25.1", features = ["macros", "rt"] }
