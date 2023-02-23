@@ -4,12 +4,13 @@ use slack_flows::send_message_to_channel;
 #[no_mangle]
 #[tokio::main(flavor = "current_thread")]
 pub async fn run() {
-    listen_to_event("jetjinser", "github-flows", vec!["issues"], handler).await;
+    listen_to_event("jaykchen", "github-flows", vec!["star"], handler).await;
 }
 
 async fn handler(payload: EventPayload) {
     if let EventPayload::UnknownEvent(e) = payload {
         let repo = e.get("repository").unwrap();
+        send_message_to_channel("jaykchen", "ik8", repo.to_string());
 
         let full_name = repo["full_name"].as_str().unwrap();
         let stargazers_count = repo["stargazers_count"].as_i64().unwrap();
