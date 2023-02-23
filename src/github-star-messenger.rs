@@ -17,6 +17,7 @@ async fn handler(payload: EventPayload) {
             "Congratulations on your repository {} with {} stars.",
             full_name, stargazers_count
         );
+        send_message_to_channel("jaykchen", "ik8", text.clone());
 
         if stargazers_count % 10 == 0 {
             send_message_to_channel("jaykchen", "ik8", text)
