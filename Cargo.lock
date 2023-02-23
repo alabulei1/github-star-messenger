@@ -442,15 +442,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "g2s-issue"
-version = "0.1.0"
-dependencies = [
- "github-flows",
- "slack-flows",
- "tokio_wasi",
-]
-
-[[package]]
 name = "generic-array"
 version = "0.14.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -479,15 +470,24 @@ checksum = "ad0a93d233ebf96623465aad4046a8d3aa4da22d4f4beba5388838c8a434bbb4"
 
 [[package]]
 name = "github-flows"
-version = "0.1.3"
+version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5cf85b82bb111cbe6a8c0d67931dfc3807d767f3a84e057d1355e57237903a0e"
+checksum = "1ea77595f667804cc67bc669c93eaa868c214a4611c50bcc36115c702bf845e3"
 dependencies = [
  "http_req_wasi",
  "octocrab_wasi",
  "once_cell",
  "reqwest_wasi",
  "serde_json",
+ "tokio_wasi",
+]
+
+[[package]]
+name = "github-star-messenger"
+version = "0.1.0"
+dependencies = [
+ "github-flows",
+ "slack-flows",
  "tokio_wasi",
 ]
 
