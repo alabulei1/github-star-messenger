@@ -486,6 +486,7 @@ dependencies = [
 name = "github-star-messenger"
 version = "0.1.0"
 dependencies = [
+ "anyhow",
  "github-flows",
  "slack-flows",
  "tokio_wasi",

@@ -11,3 +11,4 @@ crate-type = ["cdylib"]
 github-flows = "0.2"
 slack-flows = "0.2.5"
 tokio_wasi = { version = "1.25.1", features = ["macros", "rt"] }
+anyhow = "1"
