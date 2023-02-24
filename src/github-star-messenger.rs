@@ -23,7 +23,7 @@ pub async fn run() -> anyhow::Result<()> {
 async fn handler(payload: EventPayload) {
     if let EventPayload::UnknownEvent(e) = payload {
         // let repo = e.get("repository").unwrap();
-        send_message_to_channel("jaykchen", "ik8", e.to_string());
+        send_message_to_channel("ik8", "general", e.to_string());
 
         // let full_name = repo["full_name"].as_str().unwrap();
         // let stargazers_count = repo["stargazers_count"].as_i64().unwrap();
