@@ -22,19 +22,20 @@ pub async fn run() -> anyhow::Result<()> {
 
 async fn handler(payload: EventPayload) {
     if let EventPayload::UnknownEvent(e) = payload {
-        // let repo = e.get("repository").unwrap();
-        send_message_to_channel("ik8", "general", e.to_string());
+        let repo = e.get("repository").expect("repo not obtained");
 
-        // let full_name = repo["full_name"].as_str().unwrap();
-        // let stargazers_count = repo["stargazers_count"].as_i64().unwrap();
-        // let text = format!(
-        //     "Congratulations on your repository {} with {} stars.",
-        //     full_name, stargazers_count
-        // );
-        // send_message_to_channel("jaykchen", "ik8", text.clone());
+        let full_name = repo.get("full_name").expect("full_name not found");
+        let stargazers_count = repo["stargazers_count"]
+            .as_i64()
+            .expect("stars count not parsed");
+        let text = format!(
+            "Congratulations on your repository {} with {} stars.",
+            full_name, stargazers_count
+        );
+        send_message_to_channel("jaykchen", "ik8", text.clone());
 
-        // if stargazers_count % 10 == 0 {
-        //     send_message_to_channel("jaykchen", "ik8", text)
-        // }
+        if stargazers_count % 10 == 0 {
+            send_message_to_channel("jaykchen", "ik8", text);
+        }
     }
 }
