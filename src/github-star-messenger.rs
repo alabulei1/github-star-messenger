@@ -36,8 +36,5 @@ async fn handler(payload: EventPayload) {
         // if stargazers_count % 10 == 0 {
         //     send_message_to_channel("jaykchen", "ik8", text)
         // }
-    } else {
-        let text = format!("{:?}", payload);
-        send_message_to_channel("ik8", "general", text);
     }
 }
