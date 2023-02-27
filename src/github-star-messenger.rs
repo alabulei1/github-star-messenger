@@ -1,5 +1,5 @@
 use anyhow::{Error, Result};
-use github_flows::{get_octo, listen_to_event, EventPayload};
+use github_flows::{listen_to_event, EventPayload};
 use slack_flows::send_message_to_channel;
 
 #[no_mangle]
@@ -36,5 +36,8 @@ async fn handler(payload: EventPayload) {
         // if stargazers_count % 10 == 0 {
         //     send_message_to_channel("jaykchen", "ik8", text)
         // }
+    } else {
+        let text = format!("{:?}", payload);
+        send_message_to_channel("ik8", "general", text);
     }
 }
