@@ -9,7 +9,6 @@ crate-type = ["cdylib"]
 
 [dependencies]
 github-flows = "0.2"
-slack-flows = "0.2.5"
 sendgrid-flows = "0.1.1"
 tokio_wasi = { version = "1.25.0", features = ["macros", "rt"] }
 anyhow = "1"
