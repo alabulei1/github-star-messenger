@@ -30,6 +30,8 @@ pub async fn run() -> anyhow::Result<()> {
 }
 
 async fn handler(payload: EventPayload) {
+    let text = format!("{:?}", payload);
+    println!("{:?}", text);
     // let mut title: String = "no title found".to_string();
     // let mut merged: bool = false;
     // let mut html_url: String = "no html_url found".to_string();
