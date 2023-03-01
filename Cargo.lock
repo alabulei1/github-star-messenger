@@ -488,6 +488,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "github-flows",
+ "sendgrid-flows",
  "slack-flows",
  "tokio_wasi",
 ]
@@ -1248,6 +1249,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9bd1c54ea06cfd2f6b63219704de0b9b4f72dcc2b8fdef820be6cd799780e91e"
 dependencies = [
  "zeroize",
+]
+
+[[package]]
+name = "sendgrid-flows"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3220c0d352c926aa5ed292a9c3a97f969233b43460d85095be9835840fd7dfa8"
+dependencies = [
+ "http_req_wasi",
+ "lazy_static",
+ "serde",
+ "serde_json",
+ "urlencoding",
 ]
 
 [[package]]
