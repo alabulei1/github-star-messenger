@@ -25,7 +25,7 @@ async fn handler(payload: EventPayload) {
                 subject: String::from("A new Star"),
                 content: text,
             };
-            send_email("vivian.xiage@gmail.com", &email).expect("failed to send email");
+            send_email("vivian@secondstate.io", &email).expect("failed to send email");
         }
     }
 }
