@@ -4,7 +4,7 @@ use sendgrid_flows::{send_email, Email};
 #[no_mangle]
 #[tokio::main(flavor = "current_thread")]
 pub async fn run() -> anyhow::Result<()> {
-    listen_to_event("jaykchen", "vitesse-lite", vec!["star"], handler).await;
+    listen_to_event("alabulei1", "a-test", vec!["star"], handler).await;
 
     Ok(())
 }
@@ -21,11 +21,11 @@ async fn handler(payload: EventPayload) {
 
         if stargazers_count % 10 == 0 {
             let email = Email {
-                to: vec![String::from("jaykchen@gmail.com")],
-                subject: String::from("Hi"),
+                to: vec![String::from("vivian@secondstate.io")],
+                subject: String::from("A new Star"),
                 content: text,
             };
-            send_email("jaykchen@gmail.com", &email).expect("failed to send email");
+            send_email("vivian.xiage@gmail.com", &email).expect("failed to send email");
         }
     }
 }
